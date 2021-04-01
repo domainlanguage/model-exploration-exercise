@@ -163,27 +163,34 @@
       cards.push({ question: question, answer: answer });
     }
 
-    // now that we have all the cards, we know how to hide them
+    // now that we have all the cards, we know how to hide them. initialize button.
     function hideAllCards() {
       for (card of cards) {
-        card.question.classList.remove("revealed");
-        card.answer.classList.remove("revealed");
+        hideAnswer(card)();
       }
     }
     document.getElementById("hide-all").addEventListener("click", hideAllCards)
 
-    // initialize
+    // initialize all cards
     for (card of cards) {
       console.log("got a card");
       card.question.addEventListener("click", showAnswer(card))
+      card.answer.addEventListener("click", hideAnswer(card))
     }
 
-    // the actual thing that does something
+    // the actual things that do something
     function showAnswer(card) {
       return function (clickEvent) {
         hideAllCards();
         card.question.classList.add("revealed");
         card.answer.classList.add("revealed");
+      }
+    }
+
+    function hideAnswer(card) {
+      return function (clickEvent) {
+        card.question.classList.remove("revealed");
+        card.answer.classList.remove("revealed");
       }
     }
   </script>
