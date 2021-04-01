@@ -5,8 +5,9 @@
     .sheet {
       display: grid;
       border: 5x red solid;
-      grid-template-columns: 45vw 45vw;
+      grid-template-columns: 50% 50%;
       grid-template-rows: repeat(5, 400px);
+      margin: auto;
     }
 
     .card {
@@ -57,19 +58,21 @@
     .question-text {
       padding: 10px;
     }
+
+    header {
+      text-align: center
+    }
   </style>
 </head>
 
 <body>
 
-  .answer-text {
-  padding: 20px;
-  }
-
-  .question-text {
-  padding: 10px;
-  }
-  Hello! <button id="hide-all">Hide all</button>
+  <header>
+    <h1>
+      Scenario: Where is the cargo?
+    </h1>
+    <button id="hide-all">Hide all</button>
+  </header>
   <p></p>
   <div class="sheet">
     <div class="card">
