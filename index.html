@@ -10,7 +10,6 @@
     }
 
     .card {
-      border: 1px orange solid;
       padding: 0px;
       margin: 10px;
     }
@@ -50,90 +49,151 @@
       height: 80%;
       opacity: 100%;
     }
+
+    .answer-text {
+      padding: 20px;
+    }
+
+    .question-text {
+      padding: 10px;
+    }
   </style>
 </head>
 
 <body>
+
+  .answer-text {
+  padding: 20px;
+  }
+
+  .question-text {
+  padding: 10px;
+  }
   Hello! <button id="hide-all">Hide all</button>
   <p></p>
   <div class="sheet">
     <div class="card">
       <div class="question">
-        Can you describe the simplest version of the software you need?
-      </div>
-      <div class="answer">Automatically download the vendor handling report as a PDF and then do a Ctrl-F and the cargo
-        ID, and then copy all the pages it finds.
-      </div>
-    </div>
-    <div class="card">
-      <div class="question">Where can we get the data?
-      </div>
-      <div class="answer">All the data is in the vendor handling report I would use to do this manually, so you could
-        get the data from there.
-      </div>
-    </div>
-    <div class="card">
-      <div class="question">How detailed should location be? GPS coordinates?
-      </div>
-      <div class="answer">We just want to know what vessel voyage it's on or what port it's in. We know where the ship
-        is, if we need that!
-      </div>
-    </div>
-    <div class="card">
-      <div class="question">Are the cargoes physically tracked as they move around? Can you explain that?
-      </div>
-      <div class="answer">Cargo gets logged at various points, using bar code scanners or something comparable.
-        Especially when a cargo is loaded or unloaded or received or stored, etc.
-      </div>
-    </div>
-    <div class="card">
-      <div class="question">Would you walk us through an example and show us how you'd figure this out manually if you
-        had to?
-      </div>
-      <div class="answer">The itinerary says a cargo should be transferred
-        in LGB port, and it is due in today on vessel
-        voyage X. I go to the vendor handling report for
-        the section for LGB, unloading of X. Let’s say I
-        see my cargo’s ID in the (long) list. Then I'll find
-        the section for the loading of the train it’s
-        supposed to be transported out on. I don’t see it
-        there, so I know it must be in the port of LGB.
-      </div>
-    </div>
-    <div class="card">
-      <div class="question">Do we need history?
-      </div>
-      <div class="answer">No. It would be nice to have sometimes when we are trying to figure out what went wrong. But
-        what we really need now is the current location.
-      </div>
-    </div>
-    <div class="card">
-      <div class="question">How accurate does the answer need to be?
-      </div>
-      <div class="answer">As accurate as possible.
-      </div>
-    </div>
-    <div class="card">
-      <div class="question">Where does the data in the vendor handling report come from?
-      </div>
-      <div class="answer">Well, maybe <i>you</i> can tell <i>me</i> that. It's your software after all!
-      </div>
-    </div>
-    <div class="card">
-      <div class="question">Is the customer looking up their current cargo location directly?
-      </div>
-      <div class="answer">Customers call our shipping clerks to ask.
-        Sometimes clerks or operational personnel
-        will want to look up a cargo for some
-        reason. Or a sales rep, if an important
-        customer has a critical cargo.
-      </div>
-    </div>
-    <div class="card">
-      <div class="question">The legacy system is pretty awful, isn't it?
+        <div class="question-text">
+          Can you describe the simplest version of the software you need?
+        </div>
       </div>
       <div class="answer">
-        Yes, you've convinced me our software is awful!
+        <div class="answer-text">
+          Automatically download the vendor handling report as a PDF and then do a Ctrl-F and the cargo
+          ID, and then copy all the pages it finds.
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="question">
+        <div class="question-text">Where can we get the data?
+        </div>
+      </div>
+      <div class="answer">
+        <div class="answer-text">All the data is in the vendor handling report I would use to do this manually, so you
+          could
+          get the data from there.
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="question">
+        <div class="question-text">How detailed should location be? GPS coordinates?
+        </div>
+      </div>
+      <div class="answer">
+        <div class="answer-text">We just want to know what vessel voyage it's on or what port it's in. We know where the
+          ship
+          is, if we need that!
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="question">
+        <div class="question-text">Are the cargoes physically tracked as they move around? Can you explain that?
+        </div>
+      </div>
+      <div class="answer">
+        <div class="answer-text">Cargo gets logged at various points, using bar code scanners or something comparable.
+          Especially when a cargo is loaded or unloaded or received or stored, etc.
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="question">
+        <div class="question-text">Would you walk us through an example and show us how you'd figure this out manually
+          if you
+          had to?
+        </div>
+      </div>
+      <div class="answer">
+        <div class="answer-text">The itinerary says a cargo should be transferred
+          in LGB port, and it is due in today on vessel
+          voyage X. I go to the vendor handling report for
+          the section for LGB, unloading of X. Let’s say I
+          see my cargo’s ID in the (long) list. Then I'll find
+          the section for the loading of the train it’s
+          supposed to be transported out on. I don’t see it
+          there, so I know it must be in the port of LGB.
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="question">
+        <div class="question-text">Do we need history?
+        </div>
+      </div>
+      <div class="answer">
+        <div class="answer-text">No. It would be nice to have sometimes when we are trying to figure out what went
+          wrong. But
+          what we really need now is the current location.
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="question">
+        <div class="question-text">How accurate does the answer need to be?
+        </div>
+      </div>
+      <div class="answer">
+        <div class="answer-text">As accurate as possible.
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="question">
+        <div class="question-text">Where does the data in the vendor handling report come from?
+        </div>
+      </div>
+      <div class="answer">
+        <div class="answer-text">Well, maybe <i>you</i> can tell <i>me</i> that. It's your software after all!
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="question">
+        <div class="question-text">Is the customer looking up their current cargo location directly?
+        </div>
+      </div>
+      <div class="answer">
+        <div class="answer-text">Customers call our shipping clerks to ask.
+          Sometimes clerks or operational personnel
+          will want to look up a cargo for some
+          reason. Or a sales rep, if an important
+          customer has a critical cargo.
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="question">
+        <div class="question-text">The legacy system is pretty awful, isn't it?
+        </div>
+      </div>
+      <div class="answer">
+        <div class="answer-text">
+          Yes, you've convinced me our software is awful!
+        </div>
       </div>
     </div>
   </div>
