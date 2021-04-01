@@ -163,7 +163,7 @@
       cards.push({ question: question, answer: answer });
     }
 
-    // now that we have all the cards, we know how to hide them. initialize button.
+    // now that we have all the cards, we know how to hide them.
     function hideAllCards() {
       for (card of cards) {
         hideAnswer(card)();
@@ -188,7 +188,7 @@
     }
 
     function hideAnswer(card) {
-      return function (clickEvent) {
+      return function () {
         card.question.classList.remove("revealed");
         card.answer.classList.remove("revealed");
       }
