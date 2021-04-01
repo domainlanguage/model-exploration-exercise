@@ -1,67 +1,7 @@
 <html>
 
 <head>
-  <style type="text/css">
-    .sheet {
-      display: grid;
-      grid-template-columns: 50% 50%;
-      grid-template-rows: repeat(5, 400px);
-      margin: auto;
-    }
-
-    .card {
-      padding: 0px;
-      margin: 10px;
-    }
-
-    .card .question {
-      background: pink;
-      color: black;
-      height: 100%;
-      width: 100%;
-      transition: 0.5s ease;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 15px;
-    }
-
-    .card .question.revealed {
-      height: 20%;
-      border-bottom-right-radius: 0px;
-      border-bottom-left-radius: 0px;
-    }
-
-    .card .answer {
-      display: flex;
-      height: 0;
-      opacity: 0;
-      background: black;
-      color: pink;
-      justify-content: center;
-      align-items: center;
-      transition: 0.5s ease;
-      border-bottom-right-radius: 15px;
-      border-bottom-left-radius: 15px;
-    }
-
-    .card .answer.revealed {
-      height: 80%;
-      opacity: 100%;
-    }
-
-    .answer-text {
-      padding: 20px;
-    }
-
-    .question-text {
-      padding: 10px;
-    }
-
-    header {
-      text-align: center
-    }
-  </style>
+  <link rel="stylesheet" href="cardsheet.css">
 </head>
 
 <body>
