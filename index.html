@@ -1,7 +1,75 @@
 <html>
 
+<head>
+  <style type="text/css">
+    .sheet {
+      display: grid;
+      border: 5x red solid;
+      grid-template-columns: 45vw 45vw;
+      grid-template-rows: 400px;
+    }
+
+    .card {
+      border: 1px orange solid;
+      padding: 0px;
+    }
+
+    .card label {
+      padding: 20px;
+      margin: 0px;
+      background: pink;
+      color: black;
+      position: absolute;
+      height: 100%;
+    }
+
+    .card [type="radio"] {
+      opacity: 0;
+      width: 0;
+      padding: 0;
+      margin: 0;
+    }
+
+    .answer {
+      background: black;
+      position: absolute;
+      color: pink;
+      padding: 20px;
+      margin: 5px;
+      height: 0%
+    }
+
+    .card input:checked~label {
+      background: orange;
+    }
+
+    input:checked~.answer {
+      background: blue;
+      height: 100%
+    }
+  </style>
+</head>
+
 <body>
   Hello!
+  <input type="radio" id="close-all" name="flipper"><label for="close-all">Close all answers</label>
+  <p></p>
+  <div class="sheet">
+    <div class="card">
+      <input type="radio" id="q1" name="flipper">
+      <label for="q1" class="question">How do you like cats?</label>
+      <div class="answer">
+        I am a kitteh
+      </div>
+    </div>
+    <div class="card">
+      <input type="radio" id="q2" name="flipper">
+      <label for="q2" class="question">How do you like armadillos?</label>
+      <div class="answer">
+        Woof
+      </div>
+    </div>
+  </div>
 </body>
 
 </html>
