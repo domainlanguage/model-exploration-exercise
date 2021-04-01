@@ -14,62 +14,109 @@
       padding: 0px;
     }
 
-    .card label {
-      padding: 20px;
-      margin: 0px;
+    .card .question {
       background: pink;
       color: black;
-      position: absolute;
       height: 100%;
+      width: 100%;
+      transition: 0.5s ease;
     }
 
-    .card [type="radio"] {
-      opacity: 0;
-      width: 0;
-      padding: 0;
-      margin: 0;
+    .card .question.revealed {
+      height: 20%;
     }
 
-    .answer {
+    .question-text {
+      margin: auto;
+      text-align: center;
+      height: 100%;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      border: 2px blue dotted;
+      justify-content: center;
+    }
+
+    .card .answer {
+      display: flex;
+      height: 0;
       background: black;
-      position: absolute;
       color: pink;
-      padding: 20px;
-      margin: 5px;
-      height: 0%
+      justify-content: center;
+      align-items: center;
+      transition: 0.5s ease;
     }
 
-    .card input:checked~label {
-      background: orange;
-    }
-
-    input:checked~.answer {
-      background: blue;
-      height: 100%
+    .card .answer.revealed {
+      height: 80%;
     }
   </style>
 </head>
 
 <body>
-  Hello!
-  <input type="radio" id="close-all" name="flipper"><label for="close-all">Close all answers</label>
+  Hello! <button id="hide-all">Hide all</button>
   <p></p>
   <div class="sheet">
     <div class="card">
-      <input type="radio" id="q1" name="flipper">
-      <label for="q1" class="question">How do you like cats?</label>
-      <div class="answer">
+      <div class="question">
+        <div class="question-text">How do you like cats?</div>
+      </div>
+      <div class="answer" id="kittehAnswer">
         I am a kitteh
       </div>
     </div>
-    <div class="card">
-      <input type="radio" id="q2" name="flipper">
-      <label for="q2" class="question">How do you like armadillos?</label>
-      <div class="answer">
-        Woof
-      </div>
-    </div>
+
   </div>
+  <script type="text/javascript">
+    console.log("Hello world");
+
+    // utility for explicit error handling
+    function getChildByClass(element, className) {
+      const child = element.getElementsByClassName(className);
+      if (child.length === 0) {
+        throw new Error("Element " + element.id + " has no child of class " + className + ", expected 1");
+      }
+      if (child.length > 1) {
+        throw new Error("Element " + element.id + " has multiple children of class " + className + ", expected 1");
+      }
+      return child[0];
+    }
+
+    // setup
+    const rawCards = document.getElementsByClassName("card");
+
+    // get data in the right format
+    const cards = [];
+    for (rawCard of rawCards) {
+      const question = getChildByClass(rawCard, "question");
+      const answer = getChildByClass(rawCard, "answer");
+      cards.push({ question: question, answer: answer });
+    }
+
+    // now that we have all the cards, we know how to hide them
+    function hideAllCards() {
+      for (card of cards) {
+        card.question.classList.remove("revealed");
+        card.answer.classList.remove("revealed");
+      }
+    }
+    document.getElementById("hide-all").addEventListener("click", hideAllCards)
+
+    // initialize
+    for (card of cards) {
+      console.log("got a card");
+      card.question.addEventListener("click", showAnswer(card))
+    }
+
+    // the actual thing that does something
+    function showAnswer(card) {
+      return function (clickEvent) {
+        hideAllCards();
+        card.question.classList.add("revealed");
+        card.answer.classList.add("revealed");
+      }
+    }
+  </script>
 </body>
 
 </html>
